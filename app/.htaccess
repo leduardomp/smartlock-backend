@@ -1,0 +1,43 @@
+RewriteEngine On
+Options +FollowSymlinks
+
+
+
+
+#Administracion
+RewriteRule ^api/usuario/?$ src/api/admin/user/us_controller.php [NC,L]
+RewriteRule ^api/usuario/([0-9]+)/?$ src/api/admin/user/us_controller.php?id=$1 [NC,L]
+RewriteRule ^api/chapa/?$ src/api/admin/chapa/ch_controller.php [NC,L]
+RewriteRule ^api/chapa/(LEMP\-[a-zA-Z0-9]+)/?$ src/api/admin/chapa/ch_controller.php?num_serie=$1 [NC,L]
+RewriteRule ^api/chapa/usuario/([a-zA-Z0-9._]+@[a-zA-Z.]+)/?$ src/api/admin/chapa_usuario/ch_us_controller.php?id_usuario=$1 [NC,L]
+
+
+
+#Appmovil
+RewriteRule ^api/acceso/?$ src/api/acceso/controller.php [NC,L]
+RewriteRule ^api/acceso/refreshToken?$ src/api/acceso/refreshToken/controller.php [NC,L]
+
+RewriteRule ^api/app/chapas/?$ src/api/app/chapas/controller.php [NC,L]
+RewriteRule ^api/app/chapas/(LEMP\-[a-zA-Z0-9]+)/?$ src/api/app/chapas/controller.php?num_serie=$1 [NC,L]
+
+RewriteRule ^api/app/apertura/?$ src/api/app/accion/controller.php [NC,L]
+
+
+#Dispositivo
+RewriteRule ^api/dispositivo/accion/(LEMP\-[a-zA-Z0-9]+)/?$ src/api/dispositivo/dis_controller.php?num_serie=$1 [NC,L]
+RewriteRule ^api/dispositivo/apertura/?$ src/api/dispositivo/ap_controller.php [NC,L]
+RewriteRule ^api/dispositivo/cerrar/?$ src/api/dispositivo/dis_controller.php [NC,L]
+
+
+#Alexa
+RewriteRule ^api/alexa/discovery/?$ src/api/assistant/alexa/al_controller.php [NC,L]
+RewriteRule ^api/alexa/status/(LEMP\-[a-zA-Z0-9]+)/?$ src/api/assistant/alexa/al_controller.php?num_serie=$1 [NC,L]
+RewriteRule ^api/alexa/accion/?$ src/api/assistant/alexa/al_controller.php [NC,L]
+
+
+#Siri
+RewriteRule ^api/siri/accion/?$ src/api/assistant/siri/controller.php [NC,L]
+
+
+#OTA
+RewriteRule ^api/update/?$ src/api/updateOTA/update.php [NC,L]

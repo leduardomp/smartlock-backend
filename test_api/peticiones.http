@@ -1,0 +1,171 @@
+###
+GET Http://localhost/test_api/test.php
+###
+GET Http://localhost/test_api/token.php
+
+### Valida acceso
+POST Http://localhost/api/acceso
+content-type: application/json
+
+{
+    "username":"leduardo.mp@gmail.com",
+    "password":"prueba1"
+}
+
+### Refresh token
+POST Http://localhost/api/acceso/refreshToken
+Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzY0ODA3NDEsImRhdGEiOnsiZXhwIjoxNjM2NDgwNzQxLCJlbWFpbCI6ImxlZHVhcmRvLm1wQGdtYWlsLmNvbSJ9fQ.WGLPjQHhr3shqwAzZujoAYEicIfJteveMwP3wJqwuBw"
+content-type: application/json
+
+## App movil
+
+### Get listado chapas
+GET Http://localhost/api/app/chapas
+Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzY0ODA3NDEsImRhdGEiOnsiZXhwIjoxNjM2NDgwNzQxLCJlbWFpbCI6ImxlZHVhcmRvLm1wQGdtYWlsLmNvbSJ9fQ.WGLPjQHhr3shqwAzZujoAYEicIfJteveMwP3wJqwuBw"
+content-type: application/json
+
+### Agregar chapa
+POST Http://localhost/api/app/chapas
+Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzY0ODA3NDEsImRhdGEiOnsiZXhwIjoxNjM2NDgwNzQxLCJlbWFpbCI6ImxlZHVhcmRvLm1wQGdtYWlsLmNvbSJ9fQ.WGLPjQHhr3shqwAzZujoAYEicIfJteveMwP3wJqwuBw"
+content-type: application/json
+
+{
+    "num_serie":"LEMP-CH00000122122",
+    "alias":"Cochera"
+}
+
+### Apertura chapa
+POST Http://localhost/api/app/apertura
+Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzY0ODA3NDEsImRhdGEiOnsiZXhwIjoxNjM2NDgwNzQxLCJlbWFpbCI6ImxlZHVhcmRvLm1wQGdtYWlsLmNvbSJ9fQ.WGLPjQHhr3shqwAzZujoAYEicIfJteveMwP3wJqwuBw"
+content-type: application/json
+
+{
+    "num_serie":"LEMP-CH00000122121"
+}
+
+
+
+
+
+
+
+
+
+
+
+###
+GET Http://localhost/api/usuario
+Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzI4NjMwMzksImRhdGEiOnsiZXhwIjoxNjMyODYzMDM5LCJlbWFpbCI6ImxlZHVhcmRvLm1wQGdtYWlsLmNvbSJ9fQ.JPnTTHR9md7US6d9S_f_0r7exGVaZU2q2WuGNG6BTnE"
+
+
+
+### obtener todas las chapas
+GET Http://localhost/api/chapa
+Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzI4NjMwMzksImRhdGEiOnsiZXhwIjoxNjMyODYzMDM5LCJlbWFpbCI6ImxlZHVhcmRvLm1wQGdtYWlsLmNvbSJ9fQ.JPnTTHR9md7US6d9S_f_0r7exGVaZU2q2WuGNG6BTnE"
+
+### obtener informacion de una solo chapa por ID
+GET Http://localhost/api/chapa/LEMP-CH00000122121
+Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzI4NjMwMzksImRhdGEiOnsiZXhwIjoxNjMyODYzMDM5LCJlbWFpbCI6ImxlZHVhcmRvLm1wQGdtYWlsLmNvbSJ9fQ.JPnTTHR9md7US6d9S_f_0r7exGVaZU2q2WuGNG6BTnE"
+
+### obtener informacion de las chapas por ID usuario
+GET Http://localhost/api/chapa/usuario/leduardo.mp@gmail.com
+Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzI4NjMwMzksImRhdGEiOnsiZXhwIjoxNjMyODYzMDM5LCJlbWFpbCI6ImxlZHVhcmRvLm1wQGdtYWlsLmNvbSJ9fQ.JPnTTHR9md7US6d9S_f_0r7exGVaZU2q2WuGNG6BTnE"
+
+
+
+
+### Acciones
+
+### Preguntar
+GET Http://localhost/api/dispositivo/accion/LEMP-CH00000122121
+Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzI4NjMwMzksImRhdGEiOnsiZXhwIjoxNjMyODYzMDM5LCJlbWFpbCI6ImxlZHVhcmRvLm1wQGdtYWlsLmNvbSJ9fQ.JPnTTHR9md7US6d9S_f_0r7exGVaZU2q2WuGNG6BTnE"
+content-type: application/json
+
+
+### Accion de apertura
+POST Http://localhost/api/dispositivo/apertura/
+Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzI4NjMwMzksImRhdGEiOnsiZXhwIjoxNjMyODYzMDM5LCJlbWFpbCI6ImxlZHVhcmRvLm1wQGdtYWlsLmNvbSJ9fQ.JPnTTHR9md7US6d9S_f_0r7exGVaZU2q2WuGNG6BTnE"
+content-type: application/json
+
+{
+    "num_serie":"LEMP-CH00000122121"
+}
+
+
+### Accion de cerrar
+POST Http://localhost/api/dispositivo/cerrar/
+Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzI4NjMwMzksImRhdGEiOnsiZXhwIjoxNjMyODYzMDM5LCJlbWFpbCI6ImxlZHVhcmRvLm1wQGdtYWlsLmNvbSJ9fQ.JPnTTHR9md7US6d9S_f_0r7exGVaZU2q2WuGNG6BTnE"
+content-type: application/json
+
+{
+    "num_serie":"LEMP-CH00000122121"
+}
+
+
+
+
+
+
+
+
+
+
+
+### Alexa
+
+### Conocer si hay dispositivos - recibe token de OAUTH2, no es JWT
+GET http://localhost/api/alexa/discovery
+Authorization:"Bearer 4a27927bbf76725470cd954b4709e733e645601d"
+content-type: application/json
+
+
+### Estatus dispositivo
+GET http://localhost/api/alexa/status/LEMP-CH00000122121
+Authorization:"Bearer 4a27927bbf76725470cd954b4709e733e645601d"
+content-type: application/json
+
+
+### Mandar accion de apertura o cierre
+PUT http://localhost/api/alexa/accion
+Authorization:"Bearer 4a27927bbf76725470cd954b4709e733e645601d"
+content-type: application/json
+
+{
+    "num_serie":"LEMP-CH00000122121",
+    "id_accion": 1
+}
+
+
+### Mandar accion de apertura o cierre
+PUT http://localhost/api/siri/accion
+content-type: application/json
+
+{
+    "num_serie":"LEMP-CH00000122121",
+    "email":"leduardo.mp@gmail.com",
+    "token":"123456"
+}
+
+### Mandar accion de apertura o cierre
+PUT http://192.168.100.100/api/siri/accion
+content-type: application/json
+
+{
+    "num_serie":"LEMP-CH00000122121",
+    "email":"leduardo.mp@gmail.com",
+    "token":"123456"
+}
+
+
+
+
+### OTA
+GET Http://localhost/api/update
+User-Agent: ESP8266-http-Update
+x-ESP8266-STA-MAC: 5C:CF:7F:B1:3C:0F
+x-ESP8266-AP-MAC: "jajaja"
+x-ESP8266-FREE-SPACE: 1000
+x-ESP8266-SKETCH-SIZE: 2000
+x-ESP8266-CHIP-SIZE: 12
+x-ESP8266-SDK-VERSION: 13
+x-ESP8266-VERSION: 1.0

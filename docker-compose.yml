@@ -1,0 +1,8 @@
+version: "3.9"
+services: 
+  apache2: 
+    image: apache2-php7.4
+    volumes: 
+      - "./app/:/var/www/html"
+    ports: 
+      - "80:80"

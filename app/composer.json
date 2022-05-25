@@ -1,0 +1,21 @@
+{
+    "name": "lemp/chapas",
+    "description": "Gestion de chapas con alexa",
+    "type": "project",
+    "require": {
+        "firebase/php-jwt": "^5.3",
+        "php-mqtt/client": "^1.1.1"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Lemp\\Chapas\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Luis Martinez",
+            "email": "leduardo.mp@hotmail.com"
+        }
+    ]
+}
